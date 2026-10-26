@@ -32,6 +32,9 @@ uv run python -m app.ask "LoRAとは何ですか？"
 
 詳しい手順は [lectures/01/problem.md](lectures/01/problem.md) を見てください。
 
+第1回の発展課題には、[応答時間・トークン数の計測ツール](app/benchmark.py) を用意しています。
+`uv run python -m app.benchmark --dry-run` で、APIを呼ばずに実験計画を確認できます。
+
 ## 構成
 
 ```
