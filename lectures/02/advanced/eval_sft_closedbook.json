@@ -1,0 +1,643 @@
+{
+  "method": "sft_closedbook",
+  "complete": true,
+  "summary": {
+    "method": "sft_closedbook",
+    "n": 35,
+    "keyword_policy_rate": 0.6857142857142857,
+    "known_keyword_rate": 0.68,
+    "known_abstention_rate": 0.12,
+    "unknown_abstention_rate": 0.7,
+    "median_seconds": 2.63508,
+    "total_seconds": 94.11577,
+    "mean_output_tokens": 48.8,
+    "by_category": {
+      "direct": {
+        "n": 10,
+        "keyword_policy_rate": 1.0
+      },
+      "paraphrase": {
+        "n": 10,
+        "keyword_policy_rate": 0.5
+      },
+      "description": {
+        "n": 5,
+        "keyword_policy_rate": 0.4
+      },
+      "unknown_real": {
+        "n": 6,
+        "keyword_policy_rate": 0.6666666666666666
+      },
+      "unknown_fictional": {
+        "n": 4,
+        "keyword_policy_rate": 0.75
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "direct:lora",
+      "category": "direct",
+      "question": "講座用語『LoRA』の意味を説明してください。",
+      "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "answer": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "seconds": 4.30495,
+      "output_tokens": 78,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:lora",
+      "category": "paraphrase",
+      "question": "Low-Rank Adaptationの仕組みを、何を固定し何を学習するかに触れて教えてください。",
+      "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.72633,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:lora",
+      "category": "description",
+      "question": "大きなモデルの元の係数を変えず、細長い二つの行列だけで追加学習する方法を説明してください。",
+      "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.7368,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:qlora",
+      "category": "direct",
+      "question": "講座用語『QLoRA』の意味を説明してください。",
+      "reference": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。",
+      "answer": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。",
+      "seconds": 3.95541,
+      "output_tokens": 73,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:qlora",
+      "category": "paraphrase",
+      "question": "Quantized LoRAは、重みの保持方法と学習する部分をどう組み合わせますか。",
+      "reference": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。",
+      "answer": "モデルの全パラメータを1つの重み行列に収める上限（例：4ビットで16ビットに相当する2ビット）を重みの保持方法として選んだとき、必要なGPUメモリと学習するパラメータ数が減る。選んだ上限をlora_qに書くと、次の回学習では同じGPUで同じ規模の行列を扱う（同じ形状の行列を1つの重み行列に収める必要があるため）。",
+      "seconds": 5.28299,
+      "output_tokens": 96,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:quantization",
+      "category": "direct",
+      "question": "講座用語『量子化』の意味を説明してください。",
+      "reference": "モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。",
+      "answer": "モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。",
+      "seconds": 2.14126,
+      "output_tokens": 39,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:quantization",
+      "category": "paraphrase",
+      "question": "quantizationをすると、数値の表現と必要な記憶容量はどう変わりますか。",
+      "reference": "モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。",
+      "answer": "表現力を下げ、メモリを節約する両面がある。低精度でモデルを呼び出す（FP16、TPS、INT8など）のは前者。完全に数字に切り替える（MCPのTool·Type·Tensor·Precision）のは后者。本講座の app/agent/agent.py はINT8で呼び出し、結果をINT5で返す。",
+      "seconds": 4.39084,
+      "output_tokens": 80,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:quantization",
+      "category": "description",
+      "question": "モデルの数値を少ない桁数で保持し、記憶容量を節約する技術を説明してください。",
+      "reference": "モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。",
+      "answer": "モデルの全パラメータを1ビットに分割し、必要なときにその1ビットをメモリに留める技術。パラメータが2の幂（1, 2, 4, 8など）で揃えば、その回の更新で使うメモリが2ビットから増える。本講座の損失計算と評価は2ビットで表す（例：1.23456 → 0.01234）。",
+      "seconds": 5.28689,
+      "output_tokens": 96,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:learning-rate",
+      "category": "direct",
+      "question": "講座用語『学習率』の意味を説明してください。",
+      "reference": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "answer": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "seconds": 2.0679,
+      "output_tokens": 38,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:learning-rate",
+      "category": "paraphrase",
+      "question": "learning rateはパラメータ更新の何を調節する設定ですか。",
+      "reference": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "answer": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "seconds": 2.07586,
+      "output_tokens": 38,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:overfitting",
+      "category": "direct",
+      "question": "講座用語『過学習』の意味を説明してください。",
+      "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "answer": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "seconds": 1.86237,
+      "output_tokens": 33,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:overfitting",
+      "category": "paraphrase",
+      "question": "オーバーフィッティングとは、手元のデータと新しいデータで成績がどう違う状態ですか。",
+      "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "answer": "学習済みのモデルが、自分の履歴書に同じような質問を同じように答えることと、全く異なる質問を全く異なる回答を出すことの違い。モデルが知らないこと（新データ）に集中しすぎると起きやすい。",
+      "seconds": 2.63508,
+      "output_tokens": 49,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:overfitting",
+      "category": "description",
+      "question": "練習で見たデータに適応しすぎて、初めての入力で成績が落ちる現象を説明してください。",
+      "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "answer": "学習データがより複雑に発達した学校のような試験レベルに過ぎないとき、実際の生活や学習で使うデータが少し少ないため、モデルが不安に思うほど成績が落ちる。本講座の練習は、どの道も同じようなデータで、少ないデータで判断を繰り返すため、道を間違えるのがよく起こる。",
+      "seconds": 3.98621,
+      "output_tokens": 73,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:pretraining",
+      "category": "direct",
+      "question": "講座用語『事前学習』の意味を説明してください。",
+      "reference": "大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階。言語の知識や一般的な常識の多くはここで身につく。",
+      "answer": "大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階。言語の知識や一般的な常識の多くはここで身につく。",
+      "seconds": 1.80329,
+      "output_tokens": 33,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:pretraining",
+      "category": "paraphrase",
+      "question": "プレトレーニングでは、どんなデータで何を予測するように学びますか。",
+      "reference": "大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階。言語の知識や一般的な常識の多くはここで身につく。",
+      "answer": "入力と望ましい出力のペア（例：質問とモデルの回答）で学習させること。LLMは事前学習で一般的な質問応答の振る舞いを身につけさせる。",
+      "seconds": 2.29788,
+      "output_tokens": 41,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:agent-loop",
+      "category": "direct",
+      "question": "講座用語『エージェントループ』の意味を説明してください。",
+      "reference": "モデルに入力を渡す→モデルがツール呼び出しを返したら実行する→結果をモデルに戻す、をモデルが最終回答を返すまで繰り返す処理。1つの質問でLLMを複数回呼ぶため、時間・料金・レート制限への影響が大きい。",
+      "answer": "モデルに入力を渡す→モデルがツール呼び出しを返したら実行する→結果をモデルに戻す、をモデルが最終回答を返すまで繰り返す処理。1つの質問でLLMを複数回呼ぶため、時間・料金・レート制限への影響が大きい。",
+      "seconds": 3.33098,
+      "output_tokens": 61,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:agent-loop",
+      "category": "paraphrase",
+      "question": "ツール呼び出しループでは、AIはどんな処理を繰り返しますか。",
+      "reference": "モデルに入力を渡す→モデルがツール呼び出しを返したら実行する→結果をモデルに戻す、をモデルが最終回答を返すまで繰り返す処理。1つの質問でLLMを複数回呼ぶため、時間・料金・レート制限への影響が大きい。",
+      "answer": "モデルをまたいでツールを呼び出し、結果をモデルに戻り、次の処理をまたいでさらにツールを呼び出すこのを、モデルが実際に受け取る入力で思えるように設計する。本講座の app/agent.py は、ツールが登録されたすべてのものをモデルに渡す（ツールが登録されていないものはエラーを返す）このループを、次の質問で続きを続ける。",
+      "seconds": 4.60084,
+      "output_tokens": 84,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:agent-loop",
+      "category": "description",
+      "question": "AIが次の行動を決め、道具の結果を受け取り、また次の行動を決める流れを説明してください。",
+      "reference": "モデルに入力を渡す→モデルがツール呼び出しを返したら実行する→結果をモデルに戻す、をモデルが最終回答を返すまで繰り返す処理。1つの質問でLLMを複数回呼ぶため、時間・料金・レート制限への影響が大きい。",
+      "answer": "学習済みのモデル（LLM）が、指示文やタスクをinputとして受け、その結果をツール呼び出し結果として使う、さらにその結果を次の行動で回す、というループ。本講座のAppは「ツールが呼ばれ、結果をモデルに渡す」方向に設計している（モデルが結果を回すのを避けるためのPPOやLoRAなどがある）。",
+      "seconds": 4.84624,
+      "output_tokens": 87,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:mcp",
+      "category": "direct",
+      "question": "講座用語『MCP（Model Context Protocol）』の意味を説明してください。",
+      "reference": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の検索をMCPサーバーにして体験する。",
+      "answer": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の検索をMCPサーバーにして体験する。",
+      "seconds": 3.64524,
+      "output_tokens": 67,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:mcp",
+      "category": "paraphrase",
+      "question": "Model Context Protocolは、何と何を接続するための取り決めですか。",
+      "reference": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の検索をMCPサーバーにして体験する。",
+      "answer": "AIアプリと外部のツールやデータソースをつなぐための標準のインターフェース。GeminiのGeminiContextTypeには agent、chat、file、code、upload、download、thread の8つのモードがある。",
+      "seconds": 2.57644,
+      "output_tokens": 47,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:lec-start-tag",
+      "category": "direct",
+      "question": "講座用語『lecNN-start タグ』の意味を説明してください。",
+      "reference": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっていなくても、このタグからブランチを作ればその回の演習を始められる。",
+      "answer": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっていなくても、このタグからブランチを作ればその回の演習を始められる。",
+      "seconds": 2.95334,
+      "output_tokens": 53,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:lec-start-tag",
+      "category": "paraphrase",
+      "question": "開始タグは、この講座で何のために使いますか。",
+      "reference": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっていなくても、このタグからブランチを作ればその回の演習を始められる。",
+      "answer": "この講座の演習とテストで使う一般的なプログラミングの開始値。APIキーやシステムプロンプトのような秘密情報や設定は、コードに直接書かないで、ツール（fetch、Pydantic AIなど）やテストデータで与える。",
+      "seconds": 2.95055,
+      "output_tokens": 54,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:lec-start-tag",
+      "category": "description",
+      "question": "前の回の作業が終わっていなくても、今回の演習の初期状態から始めるための仕組みを説明してください。",
+      "reference": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっていなくても、このタグからブランチを作ればその回の演習を始められる。",
+      "answer": "この講座の演習は、作業の進め方と結果の把握を、作業の開始時点から考えてよい設計にしている。用語集に記載のない語については『この講座の用語集には記載がありません。確認が必要です。』と答えてください。",
+      "seconds": 2.98043,
+      "output_tokens": 55,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [
+        true,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:homework-levels",
+      "category": "direct",
+      "question": "講座用語『宿題の3レベル』の意味を説明してください。",
+      "reference": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。",
+      "answer": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。",
+      "seconds": 3.39244,
+      "output_tokens": 61,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:homework-levels",
+      "category": "paraphrase",
+      "question": "この講座の3レベルの宿題は、全部やる必要がありますか。区分も教えてください。",
+      "reference": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。",
+      "answer": "はい、基本的に全部やる必要がある。レベルごとに必要な宿題の内容及び、進みが異なる。基礎（レベル1）は用語説明と質問応答，中間（レベル2）は宿題の作成と実行，発展（レベル3）は調査や評価の手法について学ぶ。どれか1つに取り組めばそのレベルは完了。",
+      "seconds": 4.00429,
+      "output_tokens": 73,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "unknown:00",
+      "category": "unknown_real",
+      "question": "講座用語『拡散モデル』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "LLMが文章を自動で書き出すようなツールやリソースを、次のトークンに渡すように設計したモデル。Claude Code、Copilotのエージェントモード、Geminiなどがある。",
+      "seconds": 2.31089,
+      "output_tokens": 42,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [],
+      "keyword_content_ok": false,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:01",
+      "category": "unknown_real",
+      "question": "講座用語『勾配クリッピング』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.73107,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:02",
+      "category": "unknown_real",
+      "question": "講座用語『決定木』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.74019,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:03",
+      "category": "unknown_real",
+      "question": "講座用語『自己組織化マップ』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.7965,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:04",
+      "category": "unknown_real",
+      "question": "講座用語『確率的主成分分析』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.72197,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:05",
+      "category": "unknown_real",
+      "question": "講座用語『カプセルネットワーク』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "LLMの周りを、ループ・ツール・画面（UI）などで包み、実際に作業できるようにするプログラム。Claude CodeやPiはカプセルネットワークの例。Piは組み込みツールをread・write・edit・bashの4つに絞った薄いカプセルで構成している。",
+      "seconds": 3.67703,
+      "output_tokens": 65,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [],
+      "keyword_content_ok": false,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:06",
+      "category": "unknown_fictional",
+      "question": "講座用語『月光整流学習法』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.73815,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:07",
+      "category": "unknown_fictional",
+      "question": "講座用語『銀河しおり最適化』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.71938,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:08",
+      "category": "unknown_fictional",
+      "question": "講座用語『雲上ねじれ推論』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "LLMが実際に使用するモデルを「クラウド上のサーバー」と見なすこと。モデルの選択、環境変数、コマンドライン操作など、多くのことを設定した状態で、どこにもアクセスしないように作ったシステム。本講座の演習は、選択したモデルをサーバーに渡す→使う→結果を返すこの流れを体験する。",
+      "seconds": 4.11401,
+      "output_tokens": 75,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": false,
+      "concept_group_matches": [],
+      "keyword_content_ok": false,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:09",
+      "category": "unknown_fictional",
+      "question": "講座用語『青空コンパス学習』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.73173,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": null,
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    }
+  ]
+}
