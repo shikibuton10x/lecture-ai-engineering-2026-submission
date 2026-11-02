@@ -1,0 +1,697 @@
+{
+  "method": "base_rag",
+  "complete": true,
+  "summary": {
+    "method": "base_rag",
+    "n": 35,
+    "keyword_policy_rate": 0.7714285714285715,
+    "known_keyword_rate": 0.76,
+    "known_abstention_rate": 0.16,
+    "unknown_abstention_rate": 0.8,
+    "median_seconds": 1.701,
+    "total_seconds": 86.57127,
+    "mean_output_tokens": 58.82857142857143,
+    "by_category": {
+      "direct": {
+        "n": 10,
+        "keyword_policy_rate": 0.9
+      },
+      "paraphrase": {
+        "n": 10,
+        "keyword_policy_rate": 0.9
+      },
+      "description": {
+        "n": 5,
+        "keyword_policy_rate": 0.2
+      },
+      "unknown_real": {
+        "n": 6,
+        "keyword_policy_rate": 0.6666666666666666
+      },
+      "unknown_fictional": {
+        "n": 4,
+        "keyword_policy_rate": 1.0
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "direct:lora",
+      "category": "direct",
+      "question": "講座用語『LoRA』の意味を説明してください。",
+      "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "answer": "LoRA は、事前学習済みの重み（パラメータ）を固定し、学習するパラメータの更新分を「低ランク行列」の積で表す手法です。これにより、学習するパラメータが少なく、学習結果（アダプタ）も小さく保存できるため、本講座の第 2 回演習では LoRA を扱う。\n\nLoRA の「ランク（r）」は、低ランク行列の大きさを決めるハイパーパラメータで、大きいほど表現力が上がるが、学習するパラメータとメモリも増えるため、学習するパラメータとメモリを比較する際に用いる。",
+      "seconds": 5.91528,
+      "output_tokens": 142,
+      "retrieved_terms": [
+        "LoRA",
+        "ランク（LoRAのr）",
+        "QLoRA"
+      ],
+      "search_query": "LoRA",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:lora",
+      "category": "paraphrase",
+      "question": "Low-Rank Adaptationの仕組みを、何を固定し何を学習するかに触れて教えてください。",
+      "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "answer": "LoRA（低ランク適応）の仕組みは以下の通りです。\n\n**固定するもの:**\nLoRA では、学習する重みが**固定**されます。\n\n**学習するもの:**\nLoRA では、学習する重みの更新分を**2 つの小さな行列の積**（低ランク行列）で表し、その小さな行列だけを学習します。",
+      "seconds": 3.34775,
+      "output_tokens": 79,
+      "retrieved_terms": [
+        "LoRA",
+        "ランク（LoRAのr）"
+      ],
+      "search_query": "Low-Rank Adaptation",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:lora",
+      "category": "description",
+      "question": "大きなモデルの元の係数を変えず、細長い二つの行列だけで追加学習する方法を説明してください。",
+      "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "answer": "この質問は、ファインチューニングの定義に基づいて回答できます。\n\nファインチューニングは、**事前学習済みモデル**を、**特定のタスクや形式に合ったデータ**で追加学習させることです。\n\nこの質問の文脈では、**教師ありファインチューニング（SFT）**が該当します。SFT は入力と望ましい出力のペア（例：質問と模範回答）を使ってモデルを追加学習させる方法です。\n\nしたがって、この文脈では「教師ありファインチューニング（SFT）」が正解となります。",
+      "seconds": 5.03154,
+      "output_tokens": 121,
+      "retrieved_terms": [
+        "ファインチューニング",
+        "教師ありファインチューニング（SFT）"
+      ],
+      "search_query": "追加学習",
+      "abstained": false,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:qlora",
+      "category": "direct",
+      "question": "講座用語『QLoRA』の意味を説明してください。",
+      "reference": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。",
+      "answer": "QLoRA は、LoRA 手法の一種で、ベースモデルの重みを 4 ビットなどの量子化（または低精度）してメモリを節約し、LoRA で学習する手法です。\n\nこの講座では、モデルが GPU に載るため、LoRA を扱うことで、4 ビットで読み込んだときのメモリと出力の違いを比較する演習を行います。",
+      "seconds": 3.52927,
+      "output_tokens": 82,
+      "retrieved_terms": [
+        "QLoRA",
+        "LoRA"
+      ],
+      "search_query": "QLoRA",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:qlora",
+      "category": "paraphrase",
+      "question": "Quantized LoRAは、重みの保持方法と学習する部分をどう組み合わせますか。",
+      "reference": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。",
+      "answer": "QLoRA は、LoRA の重み保持方法（4 ビットなど量子化）と学習部分（低ランク行列の積）を組み合わせる手法です。",
+      "seconds": 1.6033,
+      "output_tokens": 37,
+      "retrieved_terms": [
+        "QLoRA",
+        "LoRA"
+      ],
+      "search_query": "Quantized LoRA",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:quantization",
+      "category": "direct",
+      "question": "講座用語『量子化』の意味を説明してください。",
+      "reference": "モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。",
+      "answer": "量子化は、モデルの重みを少ないビット数（例：16 ビットから 4 ビット）で表し、メモリ使用量や計算量を減らす技術です。精度は少し下がることがあります。",
+      "seconds": 2.01587,
+      "output_tokens": 47,
+      "retrieved_terms": [
+        "量子化",
+        "QLoRA"
+      ],
+      "search_query": "量子化",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:quantization",
+      "category": "paraphrase",
+      "question": "quantizationをすると、数値の表現と必要な記憶容量はどう変わりますか。",
+      "reference": "モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。",
+      "answer": "量子化は、モデルの重みをより少ないビット数（例：16 ビットから 4 ビット）で表現し、メモリ使用量や計算量を削減する技術です。\n\nこの技術では、精度は少し低下することがあります。",
+      "seconds": 2.15772,
+      "output_tokens": 53,
+      "retrieved_terms": [
+        "量子化"
+      ],
+      "search_query": "quantization",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:quantization",
+      "category": "description",
+      "question": "モデルの数値を少ない桁数で保持し、記憶容量を節約する技術を説明してください。",
+      "reference": "モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.55268,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": "モデルの数値を少ない桁数で保持し、記憶容量を節約する技術を説明してください。",
+      "abstained": true,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:learning-rate",
+      "category": "direct",
+      "question": "講座用語『学習率』の意味を説明してください。",
+      "reference": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "answer": "学習率は、1 回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータです。\n大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "seconds": 1.83812,
+      "output_tokens": 45,
+      "retrieved_terms": [
+        "学習率"
+      ],
+      "search_query": "学習率",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:learning-rate",
+      "category": "paraphrase",
+      "question": "learning rateはパラメータ更新の何を調節する設定ですか。",
+      "reference": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "answer": "学習率は、1 回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータです。",
+      "seconds": 1.20522,
+      "output_tokens": 27,
+      "retrieved_terms": [
+        "学習率"
+      ],
+      "search_query": "learning rate",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:overfitting",
+      "category": "direct",
+      "question": "講座用語『過学習』の意味を説明してください。",
+      "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "answer": "学習データに過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "seconds": 1.39503,
+      "output_tokens": 32,
+      "retrieved_terms": [
+        "過学習",
+        "エポック"
+      ],
+      "search_query": "過学習",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:overfitting",
+      "category": "paraphrase",
+      "question": "オーバーフィッティングとは、手元のデータと新しいデータで成績がどう違う状態ですか。",
+      "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "answer": "過学習とは、学習データに過度に適合し、未知の入力に対する性能が落ちる状態です。\n\n手元のデータと新しいデータで成績がどう違う状態は、**過学習**です。",
+      "seconds": 1.90399,
+      "output_tokens": 45,
+      "retrieved_terms": [
+        "過学習"
+      ],
+      "search_query": "オーバーフィッティング",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:overfitting",
+      "category": "description",
+      "question": "練習で見たデータに適応しすぎて、初めての入力で成績が落ちる現象を説明してください。",
+      "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "answer": "この現象は、学習心理学における「過学習（Overfitting）」と呼ばれる現象です。\n\nこの現象は、学習者が訓練されたモデル（学習データ）に過度に適合し、そのモデルが学習した知識を、実際のデータ（テストデータ）に適用する際に、本来学習した知識が得られない状態です。\n\nこの現象は、学習者が「練習で見たデータに適応しすぎて」初めての入力で成績が落ちる現象を説明します。",
+      "seconds": 4.03234,
+      "output_tokens": 98,
+      "retrieved_terms": [],
+      "search_query": "練習で見たデータに適応しすぎて、初めての入力で成績が落ちる現象を説明してください。",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:pretraining",
+      "category": "direct",
+      "question": "講座用語『事前学習』の意味を説明してください。",
+      "reference": "大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階。言語の知識や一般的な常識の多くはここで身につく。",
+      "answer": "事前学習は、大量の汎用テキストを用いて、モデルが次のトークンを予測するように学習する最初の段階です。この段階で言語の知識や一般的な常識が身につきます。",
+      "seconds": 1.701,
+      "output_tokens": 39,
+      "retrieved_terms": [
+        "事前学習",
+        "ファインチューニング",
+        "LoRA"
+      ],
+      "search_query": "事前学習",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:pretraining",
+      "category": "paraphrase",
+      "question": "プレトレーニングでは、どんなデータで何を予測するように学びますか。",
+      "reference": "大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階。言語の知識や一般的な常識の多くはここで身につく。",
+      "answer": "事前学習は、大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階です。",
+      "seconds": 1.10388,
+      "output_tokens": 25,
+      "retrieved_terms": [
+        "事前学習"
+      ],
+      "search_query": "プレトレーニング",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:agent-loop",
+      "category": "direct",
+      "question": "講座用語『エージェントループ』の意味を説明してください。",
+      "reference": "モデルに入力を渡す→モデルがツール呼び出しを返したら実行する→結果をモデルに戻す、をモデルが最終回答を返すまで繰り返す処理。1つの質問でLLMを複数回呼ぶため、時間・料金・レート制限への影響が大きい。",
+      "answer": "エージェントループは、モデルが最終回答を返すまで、モデルがツール呼び出しを繰り返す処理を指します。\n1 つの質問に対して、LLM は複数回ツールを呼び出し、その結果をモデルに戻すことで、目的を達成するループ構造です。\nこの仕組みにより、時間や料金、レート制限などの影響が大きいため、設計上は慎重に検討する必要があります。",
+      "seconds": 3.66294,
+      "output_tokens": 87,
+      "retrieved_terms": [
+        "エージェントループ",
+        "AIエージェント"
+      ],
+      "search_query": "エージェントループ",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:agent-loop",
+      "category": "paraphrase",
+      "question": "ツール呼び出しループでは、AIはどんな処理を繰り返しますか。",
+      "reference": "モデルに入力を渡す→モデルがツール呼び出しを返したら実行する→結果をモデルに戻す、をモデルが最終回答を返すまで繰り返す処理。1つの質問でLLMを複数回呼ぶため、時間・料金・レート制限への影響が大きい。",
+      "answer": "エージェントループは、モデルが最終回答を返すまで、以下の処理を繰り返します。\n\n1.  **モデル入力**: 質問をモデルに入力します。\n2.  **ツール呼び出し**: 必要な関数（ツール）を呼び出し、実行結果をモデルに返します。\n3.  **結果処理**: 実行結果をモデルに戻します。\n4.  **ループ**: 上記の処理を繰り返すことで、最終回答を返すまで繰り返します。\n\nこのため、1 つの質問に対して複数のループを呼び出すことで、時間や料金、レート制限などの影響が大きい場合があります。",
+      "seconds": 5.62974,
+      "output_tokens": 136,
+      "retrieved_terms": [
+        "エージェントループ",
+        "ツール（Tool use / Function calling）"
+      ],
+      "search_query": "ツール呼び出しループ",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:agent-loop",
+      "category": "description",
+      "question": "AIが次の行動を決め、道具の結果を受け取り、また次の行動を決める流れを説明してください。",
+      "reference": "モデルに入力を渡す→モデルがツール呼び出しを返したら実行する→結果をモデルに戻す、をモデルが最終回答を返すまで繰り返す処理。1つの質問でLLMを複数回呼ぶため、時間・料金・レート制限への影響が大きい。",
+      "answer": "AI が次の行動を決め、道具の結果を受け取り、また次の行動を決める流れは、**「エージェントの行動決定プロセス（Agent Decision Process）」**と呼ばれます。\n\nこの流れは、以下の 3 つのステップで構成されます。\n\n1.  **行動の選択（Action Selection）**\n    AI は、現在の環境の状態（状態）に基づき、複数の選択肢の中から、目標達成に最も適した行動を選択します。\n\n2.  **結果の処理と評価（Evaluation & Reward）**\n    AI が選択した行動を実行し、その結果（出力）を受け取り、その結果が達成されたか否か、または特定の目標に近づくか否かを評価します。評価結果は、報酬（Reward）やスコアなどの形で出力されます。\n\n3.  **行動の決定（Action Selection）**\n    AI は、評価結果を考慮し、より良い行動を選択します。この",
+      "seconds": 7.86884,
+      "output_tokens": 192,
+      "retrieved_terms": [],
+      "search_query": "AIが次の行動を決め、道具の結果を受け取り、また次の行動を決める流れを説明してください。",
+      "abstained": false,
+      "concept_group_matches": [
+        false,
+        true
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:mcp",
+      "category": "direct",
+      "question": "講座用語『MCP（Model Context Protocol）』の意味を説明してください。",
+      "reference": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の検索をMCPサーバーにして体験する。",
+      "answer": "MCP（Model Context Protocol）は、AI アプリケーションと外部のツールやデータソースを接続するためのオープンな標準プロトコルです。\n\nこのプロトコルを「MCP サーバー」として公開することで、対応するエージェントやエディタ（MCP クライアント）が共通の方法でツールやデータソースを利用できるようになります。",
+      "seconds": 3.18583,
+      "output_tokens": 75,
+      "retrieved_terms": [
+        "MCP（Model Context Protocol）"
+      ],
+      "search_query": "MCP（Model Context Protocol）",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:mcp",
+      "category": "paraphrase",
+      "question": "Model Context Protocolは、何と何を接続するための取り決めですか。",
+      "reference": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の検索をMCPサーバーにして体験する。",
+      "answer": "Model Context Protocol は、AI アプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコルです。",
+      "seconds": 1.19249,
+      "output_tokens": 28,
+      "retrieved_terms": [
+        "MCP（Model Context Protocol）"
+      ],
+      "search_query": "Model Context Protocol",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:lec-start-tag",
+      "category": "direct",
+      "question": "講座用語『lecNN-start タグ』の意味を説明してください。",
+      "reference": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっていなくても、このタグからブランチを作ればその回の演習を始められる。",
+      "answer": "この講座用語集には記載がありません。確認が必要です。",
+      "seconds": 0.553,
+      "output_tokens": 12,
+      "retrieved_terms": [
+        "lecNN-start タグ"
+      ],
+      "search_query": "lecNN-start タグ",
+      "abstained": true,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:lec-start-tag",
+      "category": "paraphrase",
+      "question": "開始タグは、この講座で何のために使いますか。",
+      "reference": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっていなくても、このタグからブランチを作ればその回の演習を始められる。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.56673,
+      "output_tokens": 13,
+      "retrieved_terms": [
+        "lecNN-start タグ"
+      ],
+      "search_query": "開始タグ",
+      "abstained": true,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "description:lec-start-tag",
+      "category": "description",
+      "question": "前の回の作業が終わっていなくても、今回の演習の初期状態から始めるための仕組みを説明してください。",
+      "reference": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっていなくても、このタグからブランチを作ればその回の演習を始められる。",
+      "answer": "この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.5707,
+      "output_tokens": 13,
+      "retrieved_terms": [],
+      "search_query": "前の回の作業が終わっていなくても、今回の演習の初期状態から始めるための仕組みを説明してください。",
+      "abstained": true,
+      "concept_group_matches": [
+        false,
+        false
+      ],
+      "keyword_content_ok": false,
+      "expected_abstention": false
+    },
+    {
+      "id": "direct:homework-levels",
+      "category": "direct",
+      "question": "講座用語『宿題の3レベル』の意味を説明してください。",
+      "reference": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。",
+      "answer": "宿題の 3 段階は、学習プロセスの進捗を明確に示すための 3 つのステップです。\n\n1.  **基礎（講義内容の確認）**：\n    学習者が講義で習得した知識や概念を、実際に理解し、確認する段階です。\n\n2.  **実装（自分でコードを書く）**：\n    基礎を理解した上で、課題を解決するために必要なコードを実装する段階です。\n\n3.  **発展（調査や試行）**：\n    課題を解決した上で、より深い理解や新しい発見を得るための調査や実験を行う段階です。\n\nこの 3 つのステップを踏むことで、学習者がどの段階で課題を完了するかを判断し、採点も行うことができます。",
+      "seconds": 7.10965,
+      "output_tokens": 169,
+      "retrieved_terms": [
+        "宿題の3レベル"
+      ],
+      "search_query": "宿題の3レベル",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "paraphrase:homework-levels",
+      "category": "paraphrase",
+      "question": "この講座の3レベルの宿題は、全部やる必要がありますか。区分も教えてください。",
+      "reference": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。",
+      "answer": "この講座の3レベルの宿題は、**全部やる必要があります**ではありません。\n\n原則として、どれか**1つ**に取り組めばその回の宿題は完了します。\n\n区分は以下の通りです：\n*   **基礎（講義内容の確認）**：講義の内容を確認する段階です。\n*   **実装（自分でコードを書く）**：基礎を確認した上で、自分でコードを書く段階です。\n*   **発展（調査や試行）**：基礎と実装を踏まえた上で、調査や試行する段階です。\n\nこれら3段階の中から**1つ**を選んで取り組むことで、その回の宿題は完了します。",
+      "seconds": 5.91187,
+      "output_tokens": 142,
+      "retrieved_terms": [
+        "宿題の3レベル"
+      ],
+      "search_query": "3レベル",
+      "abstained": false,
+      "concept_group_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "keyword_content_ok": true,
+      "expected_abstention": false
+    },
+    {
+      "id": "unknown:00",
+      "category": "unknown_real",
+      "question": "講座用語『拡散モデル』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "拡散モデルは、物理的な現象（例：熱伝導、質量移動、電荷移動）において、物質や電荷が空間に均一に分布し、その分布が時間とともに変化することを説明する数学的モデルです。このモデルは、物質の移動が「拡散」する現象を記述するものであり、拡散係数や拡散速度などのパラメータを用いて記述されます。",
+      "seconds": 3.80327,
+      "output_tokens": 91,
+      "retrieved_terms": [],
+      "search_query": "拡散モデル",
+      "abstained": false,
+      "concept_group_matches": [],
+      "keyword_content_ok": false,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:01",
+      "category": "unknown_real",
+      "question": "講座用語『勾配クリッピング』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には「勾配クリッピング」という用語は記載されていません。",
+      "seconds": 0.9034,
+      "output_tokens": 20,
+      "retrieved_terms": [],
+      "search_query": "勾配クリッピング",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:02",
+      "category": "unknown_real",
+      "question": "講座用語『決定木』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には「決定木」という用語は記載されていません。",
+      "seconds": 0.76968,
+      "output_tokens": 18,
+      "retrieved_terms": [],
+      "search_query": "決定木",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:03",
+      "category": "unknown_real",
+      "question": "講座用語『自己組織化マップ』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には「自己組織化マップ」という用語は記載されていません。",
+      "seconds": 0.83906,
+      "output_tokens": 20,
+      "retrieved_terms": [],
+      "search_query": "自己組織化マップ",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:04",
+      "category": "unknown_real",
+      "question": "講座用語『確率的主成分分析』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "確率的主成分分析（PCA）は、データセットから最も重要な特徴（主成分）を抽出し、その方向性を表現する統計的手法です。\n\nこの手法は、データの変動を「主成分」として分解し、これら主成分の方向性を正しく抽出することで、データに隠された重要なパターンを視覚化・分析できます。",
+      "seconds": 3.21329,
+      "output_tokens": 77,
+      "retrieved_terms": [],
+      "search_query": "確率的主成分分析",
+      "abstained": false,
+      "concept_group_matches": [],
+      "keyword_content_ok": false,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:05",
+      "category": "unknown_real",
+      "question": "講座用語『カプセルネットワーク』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には「カプセルネットワーク」という用語は記載されていません。",
+      "seconds": 0.84211,
+      "output_tokens": 20,
+      "retrieved_terms": [],
+      "search_query": "カプセルネットワーク",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:06",
+      "category": "unknown_fictional",
+      "question": "講座用語『月光整流学習法』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には「月光整流学習法」という用語は記載されていません。",
+      "seconds": 0.85342,
+      "output_tokens": 20,
+      "retrieved_terms": [],
+      "search_query": "月光整流学習法",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:07",
+      "category": "unknown_fictional",
+      "question": "講座用語『銀河しおり最適化』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "該当する項目は見つかりませんでした。この講座の用語集には記載がありません。確認が必要です。",
+      "seconds": 0.8909,
+      "output_tokens": 21,
+      "retrieved_terms": [],
+      "search_query": "銀河しおり最適化",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:08",
+      "category": "unknown_fictional",
+      "question": "講座用語『雲上ねじれ推論』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。",
+      "seconds": 0.43014,
+      "output_tokens": 10,
+      "retrieved_terms": [],
+      "search_query": "雲上ねじれ推論",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    },
+    {
+      "id": "unknown:09",
+      "category": "unknown_fictional",
+      "question": "講座用語『青空コンパス学習』の意味を説明してください。",
+      "reference": "この講座の用語集には記載がありません。確認が必要です。",
+      "answer": "この講座の用語集には記載がありません。",
+      "seconds": 0.44122,
+      "output_tokens": 10,
+      "retrieved_terms": [],
+      "search_query": "青空コンパス学習",
+      "abstained": true,
+      "concept_group_matches": [],
+      "keyword_content_ok": true,
+      "expected_abstention": true
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "execution_note": "受講者本人のColab ProをCodexが操作して実行。講師の参考結果ではない。",
+  "gpu": "Tesla T4",
+  "python": "3.13.16",
+  "steps": 40,
+  "epoch": 20.0,
+  "log_history": [
+    {
+      "loss": 1.56224365234375,
+      "grad_norm": 2.0914764404296875,
+      "learning_rate": 0.00019618256431728194,
+      "entropy": 1.8357857525348664,
+      "num_tokens": 17860.0,
+      "mean_token_accuracy": 0.6873114347457886,
+      "epoch": 5.0,
+      "step": 10
+    },
+    {
+      "loss": 0.08401486277580261,
+      "grad_norm": 0.31433606147766113,
+      "learning_rate": 0.00013612416661871533,
+      "entropy": 0.17248958460986613,
+      "num_tokens": 35720.0,
+      "mean_token_accuracy": 0.9850948065519333,
+      "epoch": 10.0,
+      "step": 20
+    },
+    {
+      "loss": 0.01841246336698532,
+      "grad_norm": 0.2630361020565033,
+      "learning_rate": 4.735678371226441e-05,
+      "entropy": 0.04347703894600272,
+      "num_tokens": 53580.0,
+      "mean_token_accuracy": 0.9959654927253723,
+      "epoch": 15.0,
+      "step": 30
+    },
+    {
+      "loss": 0.01397252231836319,
+      "grad_norm": 0.2173735350370407,
+      "learning_rate": 4.2658237049655323e-07,
+      "entropy": 0.030760064627975224,
+      "num_tokens": 71440.0,
+      "mean_token_accuracy": 0.9963105946779252,
+      "epoch": 20.0,
+      "step": 40
+    },
+    {
+      "train_runtime": 212.5384,
+      "train_samples_per_second": 1.317,
+      "train_steps_per_second": 0.188,
+      "total_flos": 221402196196608.0,
+      "train_loss": 0.4196608752012253,
+      "epoch": 20.0,
+      "step": 40
+    }
+  ],
+  "final_logged_loss": 0.01397252231836319
+}

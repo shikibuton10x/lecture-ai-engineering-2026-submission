@@ -1,0 +1,10 @@
+{
+  "experiment_code_commit": "8f807bebbed72243eb460d0819b8fa8615e5164c",
+  "source_sha256": {
+    "scripts/make_sft_dataset.py": "d048bac47de883d9c97ab9f24e912f54e086c508d509820866d6483d2a74635e",
+    "scripts/prepare_glossary_experiment.py": "6d92df68c5cadacdb495eb520c0b5df8fa588d6790d650efbf6865da1b97d038",
+    "scripts/glossary_experiment.py": "64144b3617dd0f7158f0339c82dad1346d60c4ed14587f0c9b669965a9150b64",
+    "app/tools.py": "76fe15419707e59d437d9f834b013a6b9c4c56ae7ad964a25dd94154abf9323e",
+    "data/glossary.json": "4b614a08a754bf6cf714f905f185ad5ef22e0957c7e64434a4b418edb68c2319"
+  }
+}

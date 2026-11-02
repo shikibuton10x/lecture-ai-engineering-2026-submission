@@ -1,0 +1,21 @@
+{
+  "python": "3.13.16",
+  "gpu": "Tesla T4",
+  "gpu_total_gb": 15.637,
+  "base_weight_gb": 3.01,
+  "generation_eos_token_id": 248046,
+  "generation_pad_token_id": 248044,
+  "versions": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "datasets": "5.1.0",
+    "accelerate": "1.15.0"
+  },
+  "train_sequence_length": {
+    "max": 180,
+    "median": 132.5,
+    "over_limit": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "review_method": "生成後の回答原文と用語集の照合（AIコーディング支援を使用）。学習条件・評価ルーブリックは変更していない。",
+  "canonical_exact_match_ignoring_whitespace": {
+    "matched": 10,
+    "n": 10,
+    "ids": [
+      "direct:lora",
+      "direct:qlora",
+      "direct:quantization",
+      "direct:learning-rate",
+      "direct:overfitting",
+      "direct:pretraining",
+      "direct:agent-loop",
+      "direct:mcp",
+      "direct:lec-start-tag",
+      "direct:homework-levels"
+    ]
+  },
+  "keyword_false_positive_examples": [
+    {
+      "method": "base_closedbook",
+      "id": "direct:lec-start-tag",
+      "reason": "モデル初期化のタグと説明しておりGitタグの定義と異なるが、開始・タグの語で合格する。"
+    },
+    {
+      "method": "sft_closedbook",
+      "id": "description:quantization",
+      "reason": "全パラメータを1ビットに分割、損失計算は2ビットという誤った記述があるが、ビット・メモリの語で合格する。"
+    },
+    {
+      "method": "sft_closedbook",
+      "id": "paraphrase:qlora",
+      "reason": "4ビット・LoRAの語はあるが、lora_q等の用語集にない設定や誤った精度説明を混ぜている。"
+    },
+    {
+      "method": "sft_closedbook",
+      "id": "paraphrase:quantization",
+      "reason": "INT5やMCPの架空の説明を追加しているが、概念語だけでは不合格にできない。"
+    }
+  ],
+  "note": "事例を確認したもので、独立した人間の盲検評価や全35問の意味的正解率ではない。"
+}

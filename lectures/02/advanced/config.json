@@ -1,0 +1,17 @@
+{
+  "base_model": "Qwen/Qwen3.5-0.8B",
+  "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "seed": 42,
+  "num_train_epochs": 10,
+  "lr": 0.0002,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "max_seq_len": 512,
+  "max_new_tokens": 192,
+  "batch_size": 4,
+  "gradient_accumulation_steps": 2,
+  "warmup_steps": 17,
+  "do_sample": false,
+  "method": "LoRA, FP32, no quantization"
+}
