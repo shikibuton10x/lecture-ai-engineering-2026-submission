@@ -1,0 +1,23 @@
+{
+  "glossary_terms": 58,
+  "raw_positive_examples": 116,
+  "train_positive": 116,
+  "train_abstention": 16,
+  "train_total": 132,
+  "valid": 58,
+  "evaluation": 35,
+  "evaluation_categories": {
+    "description": 5,
+    "direct": 10,
+    "paraphrase": 10,
+    "unknown_fictional": 4,
+    "unknown_real": 6
+  },
+  "split": "同じ用語の定義は共有するが質問文はtrain/valid/testで非重複。評価問題とルーブリックは学習前に固定。",
+  "sha256": {
+    "glossary_sft.jsonl": "af6ac820e0331d8d9af376e3b4cccff1b31f2f0f8bb462839752e3282bbd1081",
+    "train_messages.jsonl": "da8f986fbbd8a71fe615e115409fa3f364b348677c95ed13e0361dc070d3101c",
+    "valid_messages.jsonl": "40630ccbfb7edda3a53f7dd2c70ca8d90ec475d3da603d1ed3f947f3a34af4e4",
+    "evaluation_gold.jsonl": "dcbb5568b7996020cc273046c42771fca346b3f3992b2d71db5063283a6bd48f"
+  }
+}

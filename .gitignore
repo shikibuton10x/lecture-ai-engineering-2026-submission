@@ -12,3 +12,9 @@ learning_log/
 
 # macOS
 .DS_Store
+
+# 第2回: 大きな重み・転送用アーカイブ・端末の進捗ログは提出コードから除く
+lectures/02/advanced/adapter/
+lectures/02/advanced/checkpoints/
+lectures/02/advanced/payload.zip
+lectures/02/advanced/*execution.log
