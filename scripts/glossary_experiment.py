@@ -113,6 +113,9 @@ class Experiment:
             CONFIG["base_model"], revision=CONFIG["revision"], dtype=torch.float32).to(self.device)
         self.model.eval()
         self.model.config.use_cache = True
+        # 配布モデルのEOSとtokenizerの会話終端は異なる。Trainerによる自動変更の前から統一する。
+        self.model.generation_config.eos_token_id = self.tokenizer.eos_token_id
+        self.model.generation_config.pad_token_id = self.tokenizer.pad_token_id
         self.results = {}
         self.training = None
         import sys
@@ -125,6 +128,8 @@ class Experiment:
             "python": platform.python_version(), "gpu": torch.cuda.get_device_name(0),
             "gpu_total_gb": round(torch.cuda.get_device_properties(0).total_memory/1e9, 3),
             "base_weight_gb": round(self.model.get_memory_footprint()/1e9, 3),
+            "generation_eos_token_id": self.tokenizer.eos_token_id,
+            "generation_pad_token_id": self.tokenizer.pad_token_id,
             "versions": {p: importlib.metadata.version(p) for p in ["torch", "transformers", "peft", "trl", "datasets", "accelerate"]},
         }
         # transformers 5ではtokenize=Trueの戻り値が辞書型になるため、明示的にinput_idsを数える。
@@ -156,7 +161,8 @@ class Experiment:
         inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
         with self.torch.inference_mode():
             out = self.model.generate(**inputs, max_new_tokens=CONFIG["max_new_tokens"], do_sample=False,
-                                      pad_token_id=self.tokenizer.pad_token_id)
+                                      pad_token_id=self.tokenizer.pad_token_id,
+                                      eos_token_id=self.tokenizer.eos_token_id)
         new_tokens = out[0][inputs["input_ids"].shape[1]:]
         return self.tokenizer.decode(new_tokens, skip_special_tokens=True).strip(), len(new_tokens)
 
