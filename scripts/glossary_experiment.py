@@ -27,7 +27,7 @@ CONFIG = {
     "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05,
     "max_seq_len": 512, "max_new_tokens": 192,
     "batch_size": 4, "gradient_accumulation_steps": 2,
-    "warmup_ratio": 0.1, "do_sample": False,
+    "warmup_steps": 17, "do_sample": False,
     "method": "LoRA, FP32, no quantization",
 }
 
@@ -218,7 +218,7 @@ class Experiment:
         args = SFTConfig(output_dir=str(OUT / "checkpoints"), num_train_epochs=CONFIG["num_train_epochs"],
                          per_device_train_batch_size=CONFIG["batch_size"], per_device_eval_batch_size=4,
                          gradient_accumulation_steps=CONFIG["gradient_accumulation_steps"], learning_rate=CONFIG["lr"],
-                         lr_scheduler_type="cosine", warmup_ratio=CONFIG["warmup_ratio"], logging_steps=10,
+                         lr_scheduler_type="cosine", warmup_steps=CONFIG["warmup_steps"], logging_steps=10,
                          save_strategy="epoch", save_total_limit=2, fp16=False,
                          max_length=CONFIG["max_seq_len"], packing=False, report_to="none", seed=CONFIG["seed"])
         trainer = SFTTrainer(model=self.model, args=args, train_dataset=Dataset.from_list(self.train_records),
